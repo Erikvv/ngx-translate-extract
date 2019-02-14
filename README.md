@@ -1,4 +1,4 @@
-If you like this project please show your support with a GitHub star. Much appreciated!
+Fork of @biesbjerg/ngx-translate-extract due to inactivity.
 
 # ngx-translate-extract
 Extract translatable (ngx-translate) strings and save as a JSON or Gettext pot file.
@@ -7,7 +7,7 @@ Merges with existing strings if the output file already exists.
 ## Usage
 Install the package in your project:
 
-`npm install @biesbjerg/ngx-translate-extract --save-dev`
+`npm install @erikvv/ngx-translate-extract --save-dev`
 
 Add an `extract` script to your project's `package.json`:
 ```
@@ -54,7 +54,7 @@ If you want to use spaces instead, you can do the following:
 If, for some reason, you want to extract strings not passed directly to TranslateService, you can wrap them in a custom marker function.
 
 ```ts
-import { _ } from '@biesbjerg/ngx-translate-extract';
+import { _ } from '@erikvv/ngx-translate-extract';
 
 _('Extract me');
 ```
@@ -95,3 +95,16 @@ Options:
                                                       [boolean] [default: false]
   --verbose, -vb              If true, prints all processed file paths to console
                                                       [boolean] [default: true]
+
+
+## Poedit integration
+
+In Poedit open Edit > Preferences > Extractors > Add (+)
+
+And paste this as the command:
+
+```
+‪npx ngx-translate-extract --clean --sort --format pot --input <your-src-dir> --output %o
+```
+
+(this is not exactly how Poedit is supposed to work but it gets the job done)
